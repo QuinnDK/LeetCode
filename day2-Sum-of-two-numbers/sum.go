@@ -36,7 +36,13 @@ func twoSum2(nums []int, target int) []int {
 	result := []int{}
 	m := map[int]int{}
 	for i, v := range nums {
+
+		//fmt.Println(i,v)   //输出中间参数便于理解
+
 		if k, ok := m[target-v]; ok {
+
+			//fmt.Println(k,ok,m[target-v])
+
 			result = append(result, k)
 			result = append(result, i)
 		}

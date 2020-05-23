@@ -48,6 +48,7 @@ func newList(nums []int) *ListNode {
 	return head
 }
 
+//链表相加
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 
 	// 定义一个 i 表示 两数相加是否大于10, 定义一个s表示两数两加之和

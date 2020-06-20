@@ -69,6 +69,5 @@ func divide(dividend int, divisor int) int {
 	if result > maxInt-1 {
 		result = maxInt - 1
 	}
-
 	return result
 }

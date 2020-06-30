@@ -22,7 +22,6 @@ candidates 中的数字可以无限制重复被选取。
   [7],
   [2,2,3]
 ]
-
 1.排序
 2.深度优先搜索
 3.剪枝
@@ -34,6 +33,7 @@ func main() {
 	res := combinationSum(nums, 7)
 	fmt.Println(res)
 }
+
 func combinationSum(candidates []int, target int) [][]int {
 	sort.Ints(candidates) //快排，懒得写
 	res := [][]int{}

@@ -47,7 +47,7 @@ func permute(nums []int) [][]int {
 }
 
 //回溯
-func permuteUnique(nums []int) [][]int {
+func permute1(nums []int) [][]int {
 	res := [][]int{}
 	dfs(nums, &res, 0)
 	return res
@@ -58,15 +58,10 @@ func dfs(nums []int, res *[][]int, index int) {
 		*res = append(*res, dump(nums))
 	}
 
-	//m := map[int]int{}
 	for i := index; i < len(nums); i++ {
-		//if _, ok := m[nums[i]]; ok {
-		//	continue
-		//}
 		nums[i], nums[index] = nums[index], nums[i]
 		dfs(nums, res, index+1)
 		nums[i], nums[index] = nums[index], nums[i]
-		//m[nums[i]] = 1
 	}
 }
 

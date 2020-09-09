@@ -23,6 +23,7 @@ import "fmt"
 func main() {
 	nums := []int{1, 2, 3}
 	fmt.Println(permute(nums))
+	fmt.Println(permute2(2))
 }
 func permute(nums []int) [][]int {
 	if len(nums) == 1 {
@@ -44,6 +45,32 @@ func permute(nums []int) [][]int {
 		}
 	}
 	return res
+}
+func permute2(num int) int {
+	nums := make([]int, num-1)
+	for i := 0; i < num; i++ {
+		nums[i] = i
+	}
+	if len(nums) == 1 {
+		return 0
+	}
+
+	res := [][]int{}
+	result := 0
+	for i, num := range nums {
+		// 把num从 nums 拿出去 得到tmp
+		tmp := make([]int, len(nums)-1)
+		copy(tmp[0:], nums[0:i])
+		copy(tmp[i:], nums[i+1:])
+
+		// sub 是把num 拿出去后，数组中剩余数据的全排列
+		sub := permute(tmp)
+		for k, s := range sub {
+			res = append(res, append(s, num))
+			result = k
+		}
+	}
+	return result
 }
 
 //回溯

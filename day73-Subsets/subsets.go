@@ -33,17 +33,6 @@ func subsets(nums []int) [][]int {
 }
 
 func backtrack(nums []int, start int, curr []int) {
-	//if start == len(nums) {
-	//	tmp := make([]int, len(curr))
-	//	copy(tmp, curr)
-	//	ans = append(ans, tmp)
-	//	return
-	//}
-	//
-	//backtrack(nums,  start+1, curr)
-	//curr = append(curr, nums[start])
-	//backtrack(nums,  start+1, curr)
-	//curr = curr[:len(curr)-1]
 
 	if start == len(nums) {
 		tmp := make([]int, len(curr))

@@ -53,6 +53,6 @@ func backtrack(nums []int, start int, curr []int) {
 
 //}
 func main() {
-	num := []int{1, 2, 3}
+	num := []int{1, 3, 2}
 	fmt.Println(subsets(num))
 }
